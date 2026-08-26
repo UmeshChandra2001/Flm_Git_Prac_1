@@ -3,22 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Generator</title>
+    <title>Workspace Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="card">
-        <h1>Daily Inspiration</h1>
-        <p class="subtitle">Words to build and code by</p>
-        <p class="quote">"{{ quote }}"</p>
-        <a href="/" class="btn">Refresh Quote</a>
-        <div class="share-box">
-            <span>Share this:</span>
-            <button class="share-btn">Copy Link</button>
-        </div>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SyncWork</h2>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">Overview</a>
+                <a href="#">My Tasks</a>
+                <a href="#">Analytics</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name">John Doe</p>
+                    <p class="user-role">Developer</p>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="welcome">
+                    <h1>Welcome back, John</h1>
+                    <p>Here is your schedule for today.</p>
+                </div>
+                <div class="actions">
+                    <button class="primary-btn">+ New Project</button>
+                </div>
+            </header>
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Tasks Completed</h3>
+                    <p class="metric-value">12 / 15</p>
+                    <span class="metric-trend up">↑ 8% this week</span>
+                </div>
+                <div class="metric-card">
+                    <h3>Hours Tracked</h3>
+                    <p class="metric-value">34.5h</p>
+                    <span class="metric-trend up">↑ 2.4h vs last week</span>
+                </div>
+                <div class="metric-card">
+                    <h3>Active Projects</h3>
+                    <p class="metric-value">4</p>
+                    <span class="metric-trend neutral">Stable</span>
+                </div>
+            </section>
+            <section class="content-row">
+                <div class="task-panel">
+                    <div class="panel-header">
+                        <h2>Today's Priorities</h2>
+                        <a href="#">View All</a>
+                    </div>
+                    <ul class="task-list">
+                        <li class="task-item urgent">
+                            <input type="checkbox" id="task1">
+                            <label for="task1">Review API documentation</label>
+                            <span class="tag">High</span>
+                        </li>
+                        <li class="task-item">
+                            <input type="checkbox" id="task2">
+                            <label for="task2">Optimize CSS layouts</label>
+                            <span class="tag">Medium</span>
+                        </li>
+                        <li class="task-item">
+                            <input type="checkbox" id="task3">
+                            <label for="task3">Team sync meeting</label>
+                            <span class="tag">Low</span>
+                        </li>
+                        <li class="task-item done">
+                            <input type="checkbox" id="task4" checked>
+                            <label for="task4">Deploy Flask hotfix</label>
+                            <span class="tag">Done</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="activity-panel">
+                    <div class="panel-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <p class="time">10:30 AM</p>
+                            <p class="desc">Pushed 3 commits to <strong>main</strong></p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="time">09:15 AM</p>
+                            <p class="desc">Resolved database connection bug</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="time">Yesterday</p>
+                            <p class="desc">Created repository <code>flask-dashboard</code></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    <footer>
-        <p>Powered by Flask & Python</p>
-    </footer>
 </body>
 </html>
